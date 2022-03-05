@@ -11,6 +11,12 @@ export default function Welcome() {
     <div>
       {props.Banner("fillBanner.jpg")}
       {props.Menu(menuList)}
+      <div>
+      Welcome
+      </div>
+      <div>
+      To celebrate our new year, we added in new classes.  Be sure to check our catalogue and ensure you apply while seats last!
+      </div>
       {props.Footer()}
     </div>
   );

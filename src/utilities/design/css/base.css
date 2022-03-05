@@ -2,6 +2,8 @@ body {
   background: rgb(22, 22, 22);
   color: rgb(200, 200, 200);
   font-size: 14pt;
+  padding: 0px;
+  margin: 0px;
 }
 
 a {
@@ -31,7 +33,7 @@ a {
 }
 
 .Banner {
-  width: 98vw;
+  width: 100vw;
   height: 10vh;
   padding: 0px;
   margin: 0px;
