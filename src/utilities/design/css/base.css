@@ -1,0 +1,18 @@
+body {
+  background: rgb(22, 22, 22);
+  color: rgb(200, 200, 200);
+  font-size: 14pt;
+}
+
+a {
+  color: rgb(200, 200, 200);
+  text-decoration: none;
+}
+
+.Banner {
+  width: 98vw;
+  height: 10vh;
+  padding: 0px;
+  margin: 0px;
+  background-image: url("../media/fillBanner.jpg");
+}
