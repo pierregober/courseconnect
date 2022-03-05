@@ -9,6 +9,27 @@ a {
   text-decoration: none;
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgb(20,20,20);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(200,200,200);
+  border-radius: .75rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(175,175,175);
+}
+
 .Banner {
   width: 98vw;
   height: 10vh;

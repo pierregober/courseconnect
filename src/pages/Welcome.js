@@ -11,7 +11,6 @@ export default function Welcome() {
     <div>
       {props.Banner("fillBanner.jpg")}
       {props.Menu(menuList)}
-      {props.Body()}
       {props.Footer()}
     </div>
   );

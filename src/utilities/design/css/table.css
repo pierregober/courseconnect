@@ -1,0 +1,27 @@
+.Table {
+  width: 80vw;
+  height: 50vh;
+  overflow: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.Table .Header {
+  background-color: rgb(200, 200, 200);
+  color: rgb(20, 20, 20);
+  font-size: 18pt;
+}
+
+.Table .Header div {
+  flex: auto;
+  text-align: center;
+  padding: 0.15rem;
+}
+
+.Table .Rows div {
+  flex: auto;
+  text-align: center;
+  padding: 0.15rem;
+}

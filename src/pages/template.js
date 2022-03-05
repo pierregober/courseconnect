@@ -1,12 +1,6 @@
 import { generateKey } from "../utilities/scripts/utilities.js";
 function Banner(props) {
   if (props) {
-    // return (
-    //   <img
-    //     className="Banner"
-    //     src={"../utilities/design/media/" + props}
-    //   ></img>
-    // );
     return <div className="Banner"></div>;
   } else {
     return <div></div>;
@@ -28,11 +22,6 @@ function Menu(props) {
 
 function generateMenu(location, name) {
   return { location: location, name: name };
-}
-
-function Body(props) {
-  // if (!props) throw new Error("Body Props' empty");
-  return props;
 }
 
 function Footer(props) {
