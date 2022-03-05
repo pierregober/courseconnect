@@ -29,4 +29,4 @@ function Footer(props) {
   return props;
 }
 
-export { Banner, Body, Footer, Menu, generateMenu };
+export { Banner, Footer, Menu, generateMenu };
