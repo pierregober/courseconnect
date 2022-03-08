@@ -1,5 +1,3 @@
-import * as props from "./template.js";
-
 export default function Class() {
   document.title = "Class";
   return (
@@ -9,7 +7,6 @@ export default function Class() {
         To celebrate our new year, we added in new classes. Be sure to check our
         catalogue and ensure you apply while seats last!
       </div>
-      {props.Footer()}
     </div>
   );
 }

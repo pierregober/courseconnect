@@ -1,0 +1,20 @@
+.Login {
+  width: 50vw;
+  padding: 0px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.Login div {
+  flex: 1;
+  text-align: left;
+  padding: 0.15rem;
+  justify-content: center;
+}
+
+.Login div label {
+  padding-right: 0.5rem;
+}

@@ -9,6 +9,7 @@ import Schedule from "./pages/Schedule";
 import Welcome from "./pages/Welcome";
 import reportWebVitals from "./reportWebVitals";
 import "./utilities/design/css/base.css";
+import "./utilities/design/css/login.css";
 import "./utilities/design/css/menu.css";
 import "./utilities/scripts/state.js";
 
