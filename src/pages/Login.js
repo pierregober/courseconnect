@@ -6,8 +6,16 @@ export default function Login() {
     <div>
       <div>Login</div>
       <div>
-        To celebrate our new year, we added in new classes. Be sure to check our
-        catalogue and ensure you apply while seats last!
+        <label for="firstName">First Name</label>
+        <input type="text" id="firstName" name="firstName" />
+        <label for="lastName">Last Name</label>
+        <input type="text" id="lastName" name="lastName" />
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+        <label for="passwordCheck">Re-enter Password</label>
+        <input type="password" id="passwordCheck" name="passwordCheck" />
       </div>
       {props.Footer()}
     </div>

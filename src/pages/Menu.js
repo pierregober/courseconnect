@@ -8,7 +8,7 @@ export default function Menu(props) {
       <nav>
         <div className="Menu">
           <Link to="/">Home</Link>
-          <Link to="/login">login</Link>
+          <Link to="/login">Login</Link>
           <Link to="/class">Class</Link>
           <Link to="/schedule">Schedule</Link>
         </div>
