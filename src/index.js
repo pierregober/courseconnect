@@ -1,5 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Class from "./pages/Class";
+import Error from "./pages/Error";
+import Login from "./pages/Login";
+import Menu from "./pages/Menu";
+import Schedule from "./pages/Schedule";
 import Welcome from "./pages/Welcome";
 import reportWebVitals from "./reportWebVitals";
 import "./utilities/design/css/base.css";
@@ -7,7 +13,17 @@ import "./utilities/design/css/menu.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Welcome />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Menu />}>
+          <Route index title="Welcome" element={<Welcome />} />
+          <Route path="/class" title="Class" element={<Class />} />
+          <Route path="*" title="Error" element={<Error />} />
+          <Route path="/login" title="Login" element={<Login />} />
+          <Route path="/schedule" title="Schedule" element={<Schedule />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
 );
