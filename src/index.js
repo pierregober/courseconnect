@@ -10,6 +10,7 @@ import Welcome from "./pages/Welcome";
 import reportWebVitals from "./reportWebVitals";
 import "./utilities/design/css/base.css";
 import "./utilities/design/css/menu.css";
+import "./utilities/scripts/state.js";
 
 ReactDOM.render(
   <React.StrictMode>
