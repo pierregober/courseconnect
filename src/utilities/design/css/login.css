@@ -1,5 +1,6 @@
 .Login {
   width: 50vw;
+  max-width: 400px;
   padding: 0px;
   margin: auto;
   display: flex;
@@ -12,9 +13,18 @@
   flex: 1;
   text-align: left;
   padding: 0.15rem;
-  justify-content: center;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
 .Login div label {
-  padding-right: 0.5rem;
+  flex: auto;
+}
+
+.Login div input {
+  flex: auto;
+  max-width: 200px;
 }

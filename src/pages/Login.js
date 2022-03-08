@@ -10,9 +10,9 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const [passwordPass, setPasswordPass] = useState();
+  const [passwordPass, setPasswordPass] = useState(false);
   const checkPassword = (event) => {
-    setPasswordPass(password !== event.target.checkPassword);
+    if (password !== "") setPasswordPass(password !== event.target.value);
   };
 
   const createUserObj = () => {
@@ -52,15 +52,23 @@ export default function Login() {
             <div>Login</div>
             <div>
               <label>Email</label>
-              <input type="email" name="email" onChange={setEmail} />
+              <input
+                type="email"
+                name="email"
+                onChange={(event) => setEmail(event.target.value)}
+              />
             </div>
             <div>
               <label>Password</label>
-              <input type="password" name="password" onChange={setPassword} />
+              <input
+                type="password"
+                name="password"
+                onChange={(event) => setPassword(event.target.value)}
+              />
             </div>
             <div>
-              <div onClick={() => loginUser()}>Login</div>
-              <div onClick={() => setShowLogin(false)}>Register</div>
+              <div onClick={(event) => loginUser()}>Login</div>
+              <div onClick={(event) => setShowLogin(false)}>Register</div>
             </div>
           </div>
         ) : (
@@ -71,8 +79,7 @@ export default function Login() {
               <input
                 type="text"
                 name="firstName"
-                value={firstName || ""}
-                onChange={setFN}
+                onChange={(event) => setFN(event.target.value)}
               />
             </div>
             <div>
@@ -80,8 +87,7 @@ export default function Login() {
               <input
                 type="text"
                 name="lastName"
-                value={lastName || ""}
-                onChange={setLN}
+                onChange={(event) => setLN(event.target.value)}
               />
             </div>
             <div>
@@ -89,8 +95,7 @@ export default function Login() {
               <input
                 type="email"
                 name="email"
-                value={email || ""}
-                onChange={setEmail}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </div>
             <div>
@@ -98,8 +103,7 @@ export default function Login() {
               <input
                 type="password"
                 name="password"
-                value={password || ""}
-                onChange={setPassword}
+                onChange={(event) => setPassword(event.target.value)}
               />
             </div>
             <div>
@@ -107,13 +111,13 @@ export default function Login() {
               <input
                 type="password"
                 name="passwordCheck"
-                onChange={checkPassword}
+                onChange={(event) => checkPassword(event)}
               />
             </div>
-            {!passwordPass && <div>Passwords do not match</div>}
+            {passwordPass && <div>Passwords do not match</div>}
             <div>
-              <div onClick={() => registerUser()}>Register</div>
-              <div onClick={() => setShowLogin(true)}>Login</div>
+              <div onClick={(event) => registerUser()}>Register</div>
+              <div onClick={(event) => setShowLogin(true)}>Login</div>
             </div>
           </div>
         )}
