@@ -31,6 +31,7 @@ export default function User() {
           type="text"
           name="firstName"
           value={firstName}
+          maxLength={20}
           onChange={(event) => setFN(event.target.value)}
         />
       </div>
@@ -40,6 +41,7 @@ export default function User() {
           type="text"
           name="lastName"
           value={lastName}
+          maxLength={20}
           onChange={(event) => setLN(event.target.value)}
         />
       </div>
@@ -49,6 +51,7 @@ export default function User() {
           type="email"
           name="email"
           value={email}
+          maxLength={30}
           onChange={(event) => setEmail(event.target.value)}
         />
       </div>

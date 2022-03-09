@@ -34,9 +34,13 @@ export default function Login() {
   };
 
   const registerUser = (event) => {
-    sendMessage({ type: "createUser", user: createUserObj() }).then(
-      setLoggedOn(true)
-    );
+    if (passwordPass) {
+      sendMessage({ type: "createUser", user: createUserObj() }).then(
+        setLoggedOn(true)
+      );
+    } else {
+      alert("Password failed to be replicated");
+    }
   };
 
   const [showLogin, setShowLogin] = useState(true);
@@ -52,6 +56,7 @@ export default function Login() {
               <input
                 type="email"
                 name="email"
+                maxLength={30}
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
@@ -60,6 +65,7 @@ export default function Login() {
               <input
                 type="password"
                 name="password"
+                maxLength={20}
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>
@@ -80,6 +86,7 @@ export default function Login() {
               <input
                 type="text"
                 name="firstName"
+                maxLength={20}
                 onChange={(event) => setFN(event.target.value)}
               />
             </div>
@@ -88,6 +95,7 @@ export default function Login() {
               <input
                 type="text"
                 name="lastName"
+                maxLength={20}
                 onChange={(event) => setLN(event.target.value)}
               />
             </div>
@@ -96,6 +104,7 @@ export default function Login() {
               <input
                 type="email"
                 name="email"
+                maxLength={30}
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
@@ -104,6 +113,7 @@ export default function Login() {
               <input
                 type="password"
                 name="password"
+                maxLength={20}
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>

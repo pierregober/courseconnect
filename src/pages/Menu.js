@@ -13,6 +13,7 @@ export default function Menu(props) {
           <Link to="/profile">Profile</Link>
         </div>
       </nav>
+      <div className="Logo"></div>
 
       <Outlet />
     </>
