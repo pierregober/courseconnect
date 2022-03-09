@@ -1,4 +1,5 @@
 import { getState, updateState } from "../utilities/scripts/state";
+import { sendMessage } from "../utilities/scripts/api/messenger";
 import { useState } from "react";
 
 export default function User() {
@@ -18,6 +19,7 @@ export default function User() {
 
   const updateUser = (event) => {
     //Send information to database
+    // sendMessage({type:"updateUser", user: createUserObj()});
     let newUser = createUserObj();
     newUser.login = true;
     updateState({ key: "user", user: newUser });

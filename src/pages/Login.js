@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getState, updateState } from "../utilities/scripts/state";
+import { sendMessage } from "../utilities/scripts/api/messenger";
 
 export default function Login() {
   document.title = "Login";
@@ -27,26 +28,13 @@ export default function Login() {
   const loginUser = (event) => {
     //Send information to database
     //Needs to be changed to the user object returned
-    let returnUser = createUserObj();
-    returnUser.login = true;
-
-    updateState({ key: "user", user: returnUser });
+    sendMessage({ type: "getUser", user: createUserObj() });
     console.log(getState());
   };
 
   const registerUser = (event) => {
     //Send information to database
-    let newUser = createUserObj();
-    newUser.login = true;
-    updateState({ key: "user", user: newUser });
-    //sending the post request to the database
-    fetch("https://8bx5031sr8.execute-api.us-west-2.amazonaws.com/prod/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newUser), // body data type must match "Content-Type" header
-    });
+    sendMessage({ type: "createUser", user: createUserObj() });
     console.log(getState());
   };
 
