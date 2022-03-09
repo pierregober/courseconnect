@@ -67,8 +67,12 @@ export default function Login() {
               />
             </div>
             <div>
-              <div onClick={(event) => loginUser()}>Login</div>
-              <div onClick={(event) => setShowLogin(false)}>Register</div>
+              <div className="Button" onClick={(event) => loginUser()}>
+                Login
+              </div>
+              <div className="Button" onClick={(event) => setShowLogin(false)}>
+                Register
+              </div>
             </div>
           </div>
         ) : (
@@ -116,8 +120,12 @@ export default function Login() {
             </div>
             {passwordPass && <div>Passwords do not match</div>}
             <div>
-              <div onClick={(event) => registerUser()}>Register</div>
-              <div onClick={(event) => setShowLogin(true)}>Login</div>
+              <div className="Button" onClick={(event) => registerUser()}>
+                Register
+              </div>
+              <div className="Button" onClick={(event) => setShowLogin(true)}>
+                Login
+              </div>
             </div>
           </div>
         )}

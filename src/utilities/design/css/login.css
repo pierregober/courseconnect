@@ -2,11 +2,14 @@
   width: 50vw;
   max-width: 400px;
   padding: 0px;
+  padding-top: 0.5rem;
   margin: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: space-between;
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0rem 0rem 0.25rem 0.25rem rgb(25, 25, 25);
 }
 
 .Login div {
@@ -27,4 +30,10 @@
 .Login div input {
   flex: auto;
   max-width: 200px;
+}
+
+.Login div .Button:hover {
+  background-color: rgb(200, 200, 200);
+  color: rgb(50, 50, 50);
+  cursor: pointer;
 }

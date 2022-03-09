@@ -55,7 +55,9 @@ export default function User() {
         />
       </div>
       <div>
-        <div onClick={(event) => updateUser()}>Update</div>
+        <div className="Button" onClick={(event) => updateUser()}>
+          Update
+        </div>
       </div>
     </div>
   );
