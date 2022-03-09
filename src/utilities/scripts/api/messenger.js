@@ -34,16 +34,13 @@ function createUser(props) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(props),
-  }).then((response) => {
-    // Needs work
-    // console.log("Response body", response.body);
-    // if (!response.user) {
-    //   console.log(response.error);
-    //   alert("Failed to create user");
-    // }
-    // props.id = response.id;
-    updateState({ key: "user", user: props });
-  });
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Data", data);
+      props.id = data.id;
+      updateState({ key: "user", user: props });
+    });
 }
 
 // //Initial version
@@ -69,23 +66,23 @@ function getUser(props) {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then((response) => {
-    let successLogin = false;
-    console.log(response.body.users);
-    if (!response.users) alert("Login Failed", response.error);
-    response.users.foreach((user) => {
-      successLogin =
-        user.email === props.user.email &&
-        user.password === props.user.password;
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      let successLogin = false;
+      if (!data) alert("Login Failed");
+      data.forEach((user) => {
+        successLogin =
+          user.email === props.email && user.password === props.password;
 
-      if (successLogin) {
-        user.login = true;
-        updateState(user);
-        return;
-      }
+        if (successLogin) {
+          user.login = true;
+          updateState({ key: "user", user: user });
+          return;
+        }
+      });
+      if (!successLogin) alert("Login Failed");
     });
-    if (!successLogin) alert("Login Failed");
-  });
 }
 
 function updateUser(props) {
@@ -95,11 +92,10 @@ function updateUser(props) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(props),
-  }).then((response) => {
-    if (!response.user) {
-      console.log(response.error);
-      alert("Failed to update");
-    }
-    updateState({ key: "user", user: response.user });
-  });
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      if (!data) alert("Failed to update");
+      updateState({ key: "user", user: response.user });
+    });
 }
