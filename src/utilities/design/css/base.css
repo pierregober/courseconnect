@@ -33,12 +33,12 @@ a {
 }
 
 .WelcomeBanner {
-  width: 75vw;
+  width: 50vw;
   height: 75vh;
   padding: 0px;
   margin: auto;
   margin-top: 5vh;
   background-repeat: no-repeat;
   background-size: contain;
-  background-image: url("../media/happystudents.jpg");
+  background-image: url("../media/happystudents.png");
 }
