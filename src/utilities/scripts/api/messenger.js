@@ -28,7 +28,7 @@ export function sendMessage(props) {
 }
 
 function createUser(props) {
-  fetch(urlbase + "/user/", {
+  fetch(urlbase + "user/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -62,7 +62,7 @@ function createUser(props) {
 // }
 
 function getUser(props) {
-  fetch(urlbase + "/users/", {
+  fetch(urlbase + "users/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -87,7 +87,7 @@ function getUser(props) {
 }
 
 function updateUser(props) {
-  fetch(urlbase + "/user/", {
+  fetch(urlbase + "user/", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
