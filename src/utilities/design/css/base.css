@@ -13,29 +13,31 @@ a {
 
 /* width */
 ::-webkit-scrollbar {
-  width: .5rem;
+  width: 0.5rem;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: rgb(20,20,20);
+  background: rgb(20, 20, 20);
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(200,200,200);
-  border-radius: .75rem;
+  background: rgb(200, 200, 200);
+  border-radius: 0.75rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgb(175,175,175);
+  background: rgb(175, 175, 175);
 }
 
-.Banner {
-  width: 100vw;
-  height: 10vh;
-  padding: 0px;
-  margin: 0px;
-  background-image: url("../media/fillBanner.jpg");
+.WelcomeBanner {
+  width: 75vw;
+  height: 75vh;
+  padding: 5vh 0px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../media/happystudents.jpg");
 }
