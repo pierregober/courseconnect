@@ -68,7 +68,7 @@ export default function Login() {
             </div>
             <div>
               <div className="Button" onClick={(event) => loginUser()}>
-                Login
+                Submit
               </div>
               <div className="Button" onClick={(event) => setShowLogin(false)}>
                 Register
@@ -121,7 +121,7 @@ export default function Login() {
             {passwordPass && <div>Passwords do not match</div>}
             <div>
               <div className="Button" onClick={(event) => registerUser()}>
-                Register
+                Submit
               </div>
               <div className="Button" onClick={(event) => setShowLogin(true)}>
                 Login

@@ -1,9 +1,9 @@
 .Login {
   width: 50vw;
   max-width: 400px;
-  padding: 0px;
-  padding-top: 0.5rem;
+  padding: 0.25rem;
   margin: auto;
+  margin-top: 5vh;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
