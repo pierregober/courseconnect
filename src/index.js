@@ -6,6 +6,7 @@ import Error from "./pages/Error";
 import Login from "./pages/Login";
 import Menu from "./pages/Menu";
 import Schedule from "./pages/Schedule";
+import User from "./pages/User";
 import Welcome from "./pages/Welcome";
 import reportWebVitals from "./reportWebVitals";
 import "./utilities/design/css/base.css";
@@ -22,6 +23,7 @@ ReactDOM.render(
           <Route path="/class" title="Class" element={<Class />} />
           <Route path="*" title="Error" element={<Error />} />
           <Route path="/login" title="Login" element={<Login />} />
+          <Route path="/profile" title="Profile" element={<User />} />
           <Route path="/schedule" title="Schedule" element={<Schedule />} />
         </Route>
       </Routes>

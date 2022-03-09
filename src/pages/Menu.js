@@ -11,6 +11,7 @@ export default function Menu(props) {
           <Link to="/login">Login</Link>
           <Link to="/class">Class</Link>
           <Link to="/schedule">Schedule</Link>
+          <Link to="/profile">Profile</Link>
         </div>
       </nav>
 
