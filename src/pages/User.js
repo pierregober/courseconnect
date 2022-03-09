@@ -18,12 +18,8 @@ export default function User() {
   };
 
   const updateUser = (event) => {
-    //Send information to database
-    // sendMessage({type:"updateUser", user: createUserObj()});
-    let newUser = createUserObj();
-    newUser.login = true;
-    updateState({ key: "user", user: newUser });
-    console.log(getState());
+    // updateUser(createUserObj());
+    updateState({ key: "user", user: createUser() });
   };
 
   return (

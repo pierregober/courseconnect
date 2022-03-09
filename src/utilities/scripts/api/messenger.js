@@ -37,7 +37,6 @@ function createUser(props) {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log("Data", data);
       props.id = data.id;
       updateState({ key: "user", user: props });
     });

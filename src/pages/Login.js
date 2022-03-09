@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getState, updateState } from "../utilities/scripts/state";
 import { sendMessage } from "../utilities/scripts/api/messenger";
 
@@ -6,6 +6,8 @@ export default function Login() {
   document.title = "Login";
 
   const [loggedOn, setLoggedOn] = useState(getState().user.login);
+
+  useEffect(() => {}, [loggedOn]);
   const [firstName, setFN] = useState("");
   const [lastName, setLN] = useState("");
   const [email, setEmail] = useState("");
@@ -26,16 +28,15 @@ export default function Login() {
   };
 
   const loginUser = (event) => {
-    //Send information to database
-    //Needs to be changed to the user object returned
-    sendMessage({ type: "getUser", user: createUserObj() });
-    console.log(getState());
+    sendMessage({ type: "getUser", user: createUserObj() }).then(
+      setLoggedOn(true)
+    );
   };
 
   const registerUser = (event) => {
-    //Send information to database
-    sendMessage({ type: "createUser", user: createUserObj() });
-    console.log(getState());
+    sendMessage({ type: "createUser", user: createUserObj() }).then(
+      setLoggedOn(true)
+    );
   };
 
   const [showLogin, setShowLogin] = useState(true);
