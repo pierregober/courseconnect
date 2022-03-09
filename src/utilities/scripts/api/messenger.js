@@ -28,18 +28,20 @@ export function sendMessage(props) {
 }
 
 function createUser(props) {
-  fetch(urlbase + "user/", {
+  fetch(urlbase + "users", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(props),
   }).then((response) => {
-    if (!response.user) {
-      console.log(response.error);
-      alert("Failed to create user");
-    }
-    props.id = response.id;
+    // Needs work
+    // console.log("Response body", response.body);
+    // if (!response.user) {
+    //   console.log(response.error);
+    //   alert("Failed to create user");
+    // }
+    // props.id = response.id;
     updateState({ key: "user", user: props });
   });
 }
@@ -62,14 +64,14 @@ function createUser(props) {
 // }
 
 function getUser(props) {
-  fetch(urlbase + "users/", {
+  fetch(urlbase + "users", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
-    body: "",
   }).then((response) => {
     let successLogin = false;
+    console.log(response.body.users);
     if (!response.users) alert("Login Failed", response.error);
     response.users.foreach((user) => {
       successLogin =
@@ -87,7 +89,7 @@ function getUser(props) {
 }
 
 function updateUser(props) {
-  fetch(urlbase + "user/", {
+  fetch(urlbase + "users", {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json",
