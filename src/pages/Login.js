@@ -39,6 +39,14 @@ export default function Login() {
     let newUser = createUserObj();
     newUser.login = true;
     updateState({ key: "user", user: newUser });
+    //sending the post request to the database
+    fetch("https://8bx5031sr8.execute-api.us-west-2.amazonaws.com/prod/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser), // body data type must match "Content-Type" header
+    });
     console.log(getState());
   };
 
