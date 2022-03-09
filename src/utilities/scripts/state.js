@@ -7,6 +7,7 @@ var state = {
     login: false,
   },
   schedule: [],
+  seats: {},
   classes: [],
   class: {},
 };
@@ -26,6 +27,9 @@ function updateState(props) {
       break;
     case "schedule":
       state.schedule = props.schedule;
+      break;
+    case "seats":
+      state.seats = props.seats;
       break;
     case "class":
       state.class = props.class;
