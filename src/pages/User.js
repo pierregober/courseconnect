@@ -4,9 +4,37 @@ import { useState } from "react";
 
 export default function User() {
   document.title = "Profile";
+
+  const cleanStrings = (props) => {
+    if (props) {
+      return props.replace(/[^a-zA-Z0-9!@#$%^&*()]/g, "");
+    } else {
+      return "";
+    }
+  };
+
+  const validate = (props) => {
+    switch (props.key) {
+      case "FN":
+        setFN(cleanStrings(props.value));
+        break;
+      case "LN":
+        setLN(cleanStrings(props.value));
+        break;
+      case "email":
+        setEmail(cleanStrings(props.value));
+        break;
+      case "password":
+        setPassword(cleanStrings(props.value));
+        break;
+      default:
+        break;
+    }
+  };
   const [firstName, setFN] = useState(getState().user.firstName || "");
   const [lastName, setLN] = useState(getState().user.lastName || "");
   const [email, setEmail] = useState(getState().user.email || "");
+  const [password, setPassword] = useState("");
 
   const createUserObj = () => {
     return {
@@ -30,9 +58,11 @@ export default function User() {
         <input
           type="text"
           name="firstName"
-          value={firstName}
+          value={firstName || ""}
           maxLength={20}
-          onChange={(event) => setFN(event.target.value)}
+          onChange={(event) =>
+            validate({ key: "FN", value: event.target.value })
+          }
         />
       </div>
       <div>
@@ -40,9 +70,11 @@ export default function User() {
         <input
           type="text"
           name="lastName"
-          value={lastName}
+          value={lastName || ""}
           maxLength={20}
-          onChange={(event) => setLN(event.target.value)}
+          onChange={(event) =>
+            validate({ key: "LN", value: event.target.value })
+          }
         />
       </div>
       <div>
@@ -50,9 +82,23 @@ export default function User() {
         <input
           type="email"
           name="email"
-          value={email}
+          value={email || ""}
           maxLength={30}
-          onChange={(event) => setEmail(event.target.value)}
+          onChange={(event) =>
+            validate({ key: "email", value: event.target.value })
+          }
+        />
+      </div>
+      <div>
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          value={password || ""}
+          maxLength={20}
+          onChange={(event) =>
+            validate({ key: "password", value: event.target.value })
+          }
         />
       </div>
       <div>
