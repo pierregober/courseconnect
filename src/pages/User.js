@@ -34,7 +34,7 @@ export default function User() {
   const [firstName, setFN] = useState(getState().user.firstName || "");
   const [lastName, setLN] = useState(getState().user.lastName || "");
   const [email, setEmail] = useState(getState().user.email || "");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState(getState().user.password || "");
 
   const createUserObj = () => {
     return {
