@@ -33,7 +33,9 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {}, [loggedOn]);
+  // useEffect(() => {
+  //   setLoggedOn(getState().user.login);
+  // }, [loggedOn]);
   const [firstName, setFN] = useState("");
   const [lastName, setLN] = useState("");
   const [email, setEmail] = useState("");
@@ -54,19 +56,17 @@ export default function Login() {
   };
 
   const loginUser = (event) => {
-    sendMessage({ type: "getUser", user: createUserObj() }).then(
-      setLoggedOn(true)
-    );
+    sendMessage({ type: "getUser", user: createUserObj() });
+    setLoggedOn(true);
   };
 
   const registerUser = (event) => {
-    if (passwordPass) {
-      sendMessage({ type: "createUser", user: createUserObj() }).then(
-        setLoggedOn(true)
-      );
-    } else {
-      alert("Password failed to be replicated");
-    }
+    //if (passwordPass) {
+    sendMessage({ type: "createUser", user: createUserObj() });
+    // } else {
+    //   alert("Password failed to be replicated");
+    // }
+    setLoggedOn(true);
   };
 
   const [showLogin, setShowLogin] = useState(true);

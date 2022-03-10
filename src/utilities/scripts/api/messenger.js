@@ -39,7 +39,8 @@ function createUser(props) {
     .then((data) => {
       props.id = data.id;
       updateState({ key: "user", user: props });
-    });
+    })
+    .catch((error) => console.log(error));
 }
 
 // //Initial version
@@ -80,8 +81,9 @@ function getUser(props) {
           return;
         }
       });
-      if (!successLogin) alert("Login Failed");
-    });
+      // if (!successLogin) alert("Login Failed");
+    })
+    .catch((error) => console.log(error));
 }
 
 function updateUser(props) {
@@ -96,5 +98,6 @@ function updateUser(props) {
     .then((data) => {
       if (!data) alert("Failed to update");
       updateState({ key: "user", user: response.user });
-    });
+    })
+    .catch((error) => console.log(error));
 }
