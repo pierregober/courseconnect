@@ -81,7 +81,7 @@ function getUser(props) {
           return;
         }
       });
-      // if (!successLogin) alert("Login Failed");
+      if (!successLogin) alert("Login Failed");
     })
     .catch((error) => console.log(error));
 }

@@ -1,17 +1,10 @@
+import { useState } from "react";
 import { getState, updateState } from "../utilities/scripts/state";
 import { sendMessage } from "../utilities/scripts/api/messenger";
-import { useState } from "react";
+import { cleanStrings } from "../utilities/scripts/utilities";
 
 export default function User() {
   document.title = "Profile";
-
-  const cleanStrings = (props) => {
-    if (props) {
-      return props.replace(/[^a-zA-Z0-9!@#$%^&*()]/g, "");
-    } else {
-      return "";
-    }
-  };
 
   const validate = (props) => {
     switch (props.key) {

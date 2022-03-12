@@ -1,18 +1,12 @@
 import { useState, useEffect } from "react";
 import { getState, updateState } from "../utilities/scripts/state";
 import { sendMessage } from "../utilities/scripts/api/messenger";
+import { cleanStrings } from "../utilities/scripts/utilities";
 
 export default function Login() {
   document.title = "Login";
 
   const [loggedOn, setLoggedOn] = useState(getState().user.login);
-  const cleanStrings = (props) => {
-    if (props) {
-      return props.replace(/[^a-zA-Z0-9!@#$%^&*()]/g, "");
-    } else {
-      return "";
-    }
-  };
 
   const validate = (props) => {
     switch (props.key) {
@@ -33,9 +27,6 @@ export default function Login() {
     }
   };
 
-  // useEffect(() => {
-  //   setLoggedOn(getState().user.login);
-  // }, [loggedOn]);
   const [firstName, setFN] = useState("");
   const [lastName, setLN] = useState("");
   const [email, setEmail] = useState("");
@@ -61,11 +52,11 @@ export default function Login() {
   };
 
   const registerUser = (event) => {
-    //if (passwordPass) {
-    sendMessage({ type: "createUser", user: createUserObj() });
-    // } else {
-    //   alert("Password failed to be replicated");
-    // }
+    if (passwordPass) {
+      sendMessage({ type: "createUser", user: createUserObj() });
+    } else {
+      alert("Password failed to be replicated");
+    }
     setLoggedOn(true);
   };
 
