@@ -34,6 +34,7 @@ export default function User() {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      password: password,
       login: false,
     };
   };

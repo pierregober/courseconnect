@@ -72,13 +72,15 @@ function getUser(props) {
       let successLogin = false;
       if (!data) alert("Login Failed");
       data.forEach((user) => {
-        successLogin =
-          user.email === props.email && user.password === props.password;
-
-        if (successLogin) {
-          user.login = true;
-          updateState({ key: "user", user: user });
-          return;
+        // successLogin =
+        //   user.email === props.email && user.password === props.password;
+        if (!successLogin) {
+          successLogin = user.email === props.email;
+          if (successLogin) {
+            console.log("hit", user);
+            user.login = true;
+            updateState({ key: "user", user: user });
+          }
         }
       });
       if (!successLogin) alert("Login Failed");

@@ -34,7 +34,7 @@ export default function Login() {
 
   const [passwordPass, setPasswordPass] = useState(false);
   const checkPassword = (event) => {
-    if (password !== "") setPasswordPass(password !== event.target.value);
+    if (password !== "") setPasswordPass(password === event.target.value);
   };
 
   const createUserObj = () => {
@@ -42,6 +42,7 @@ export default function Login() {
       firstName: firstName,
       lastName: lastName,
       email: email,
+      password: password,
       login: false,
     };
   };
@@ -160,7 +161,7 @@ export default function Login() {
                 onChange={(event) => checkPassword(event)}
               />
             </div>
-            {passwordPass && <div>Passwords do not match</div>}
+            {!passwordPass && <div>Passwords do not match</div>}
             <div>
               <div className="Button" onClick={(event) => registerUser()}>
                 Submit
