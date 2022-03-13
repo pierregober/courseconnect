@@ -9,4 +9,7 @@ const cleanStrings = (props) => {
     return "";
   }
 };
-export { cleanStrings, generateKey };
+
+const urlbase = "https://8bx5031sr8.execute-api.us-west-2.amazonaws.com/prod/";
+
+export { cleanStrings, generateKey, urlbase };
