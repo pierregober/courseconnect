@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getState, updateState } from "../utilities/scripts/state";
-import { sendMessage } from "../utilities/scripts/api/messenger";
+import sendMessage from "../utilities/scripts/api/messenger";
 import { cleanStrings } from "../utilities/scripts/utilities";
 
 export default function User() {

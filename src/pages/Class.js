@@ -1,3 +1,5 @@
+import Row from "../utilities/scripts/table/row";
+
 export default function Class() {
   document.title = "Class";
   return (

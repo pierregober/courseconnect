@@ -1,6 +1,6 @@
 import { createUser, getUser, updateUser } from "./user.js";
 
-export function sendMessage(props) {
+export default function sendMessage(props) {
   if (!props) throw new Error("Send Message Props' empty");
   switch (props.type) {
     case "createUser":
