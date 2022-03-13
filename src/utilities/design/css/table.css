@@ -1,3 +1,24 @@
+.ClassTable {
+  width: 80vw;
+  max-width: 900px;
+  margin: auto;
+  padding: 0px;
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px 150px 150px;
+  align-content: space-evenly;
+  justify-content: space-evenly;
+  border: 1px solid rgb(200, 200, 200);
+}
+
+.ClassTable div {
+  padding: .25rem;
+  border-right: 1px solid rgb(200, 200, 200);
+}
+
+.ClassTable div:nth-last-child(1) {
+  border: 0px;
+}
+
 .Table {
   width: 80vw;
   height: 50vh;
