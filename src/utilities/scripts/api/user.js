@@ -1,7 +1,7 @@
 import { urlbase } from "../utilities";
 import { getState, updateState } from "../state";
 
-function createUser(props) {
+const createUser = (props) => {
   fetch(urlbase + "users", {
     method: "POST",
     headers: {
@@ -15,9 +15,9 @@ function createUser(props) {
       updateState({ key: "user", user: props });
     })
     .catch((error) => console.log(error));
-}
+};
 
-function getUser(props) {
+const getUser = (props) => {
   fetch(urlbase + "users", {
     method: "GET",
     headers: {
@@ -44,9 +44,9 @@ function getUser(props) {
       if (!successLogin) alert("Login Failed");
     })
     .catch((error) => console.log(error));
-}
+};
 
-function updateUser(props) {
+const updateUser = (props) => {
   fetch(urlbase + "users", {
     method: "PATCH",
     headers: {
@@ -60,7 +60,7 @@ function updateUser(props) {
       updateState({ key: "user", user: response.user });
     })
     .catch((error) => console.log(error));
-}
+};
 
 // //Initial version
 // function loginUser(props) {
