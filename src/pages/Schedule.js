@@ -5,11 +5,9 @@ import { useEffect, useState } from "react";
 
 export default function Schedule() {
   document.title = "Schedule";
-  const [classes, setClasses] = useState([]);
+  const [classes, setClasses] = useState(getState().classes);
   useEffect(() => {
-    console.log(sendMessage({ type: "getClasses" }));
-    setClasses(getState().classes);
-    console.log(classes);
+    sendMessage({ type: "getClasses" });
   }, [classes]);
 
   return (
@@ -26,7 +24,7 @@ export default function Schedule() {
         <div>Date</div>
         <div></div>
       </div>
-      {classes && classes.map((c) => <Row {...c} />)}
+      {classes.map((c) => <Row {...c} />)}
     </div>
   );
 }
