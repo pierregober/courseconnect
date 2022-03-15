@@ -4,7 +4,7 @@ const generateKey = () => {
 
 const cleanStrings = (props) => {
   if (props) {
-    return props.replace(/[^a-zA-Z0-9!@#$%^&*()]/g, "");
+    return props.replace(/[^a-zA-Z0-9.!@#$%^&*()]/g, "");
   } else {
     return "";
   }
