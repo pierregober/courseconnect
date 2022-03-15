@@ -1,5 +1,5 @@
 import { createUser, getUser, updateUser } from "./user";
-import { getClass, createClass, updateClass } from "./class";
+import { getClass, getClasses, createClass, updateClass } from "./class";
 import { getSeats, createSeats, updateSeats } from "./seats";
 
 export default function sendMessage(props) {
@@ -21,7 +21,7 @@ export default function sendMessage(props) {
       getClass(props.class);
       break;
     case "getClasses":
-      getClass(props);
+      getClasses();
       break;
     case "updateClass":
       updateClass(props.class);

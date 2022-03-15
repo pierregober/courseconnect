@@ -1,15 +1,17 @@
 import sendMessage from "../api/messenger";
+import { generateKey } from "../utilities";
 
 export default function Row(props) {
+  console.log(props);
+  console.log(props["name"]);
   return (
-    <div className="ClassTable">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-      <div>5</div>
+    <div key={generateKey()} className="ClassTable">
+      // <div>{props.props.name}</div>
+      // <div>{props.props.professor}</div>
+      // <div>{props.props.content}</div>
+      // <div>{props.props.date}</div>
       <div>
-        <button onClick={() => sendMessage({ type: "getClass", class: {} })}>
+        <button onClick={() => sendMessage({ type: "getClasses", class: {} })}>
           submit
         </button>
       </div>
