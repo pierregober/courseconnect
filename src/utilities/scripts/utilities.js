@@ -1,5 +1,7 @@
+import { v4 as uuidv4 } from "uuid";
+
 const generateKey = () => {
-  return Math.floor(Math.random() * 100000 + 1);
+  return uuidv4();
 };
 
 const cleanStrings = (props) => {

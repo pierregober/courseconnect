@@ -2,6 +2,7 @@ import Row from "../utilities/scripts/table/row";
 import { getState, updateState } from "../utilities/scripts/state";
 import sendMessage from "../utilities/scripts/api/messenger";
 import { useEffect, useState } from "react";
+import { generateKey } from "../utilities/scripts/utilities";
 
 export default function Schedule() {
   document.title = "Schedule";
@@ -24,7 +25,9 @@ export default function Schedule() {
         <div>Date</div>
         <div></div>
       </div>
-      {classes.map((c) => <Row {...c} />)}
+      {classes.map((c) => (
+        <Row key={generateKey()} {...c} />
+      ))}
     </div>
   );
 }
