@@ -2,7 +2,7 @@ import { createUser, getUser, updateUser } from "./user";
 import { getClass, getClasses, createClass, updateClass } from "./class";
 import { getSeats, createSeats, updateSeats } from "./seats";
 
-export default function sendMessage(props) {
+export default async function sendMessage(props) {
   if (!props) throw new Error("Send Message Props' empty");
   switch (props.type) {
     case "createUser":
