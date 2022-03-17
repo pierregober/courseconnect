@@ -7,13 +7,16 @@ import { generateKey } from "../utilities/scripts/utilities";
 export default function Schedule() {
   document.title = "Schedule";
   const [classes, setClasses] = useState(getState().classes);
-  useEffect(() => {
-    sendMessage({ type: "getClasses" });
-  }, [classes]);
+
+  if (classes.length === 0)
+    sendMessage({ type: "getClasses" }).then(() =>
+      setClasses(getState().classes)
+    );
+  useEffect(() => {}, []);
 
   return (
     <div>
-      <div>Schedule</div>
+      <div>Our Offerings</div>
       <div>
         To celebrate our new year, we added in new classes. Be sure to check our
         catalogue and ensure you apply while seats last!

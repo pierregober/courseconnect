@@ -5,27 +5,38 @@ import { useEffect, useState } from "react";
 
 export default function Class() {
   document.title = "Class";
+  const [classes, setClasses] = useState([]);
+  const user = getState().user;
+  useEffect(() => {}, []);
 
-  useEffect(() => {
-    sendMessage({ type: "getClasses", class: {} });
-  }, []);
+  let message = false;
 
-  return (
-    <div>
-      <div>Class</div>
+  if (user.classes !== null && user.classes)
+    message = user.classes.length !== 0;
+
+  if (message) {
+    user.classes.forEach((obj) => {
+      sendMessage({ type: "getClass", props: obj })
+        .then((data) => classes.push(data))
+        .catch((error) => console.log(error));
+    });
+    return (
       <div>
-        To celebrate our new year, we added in new classes. Be sure to check our
-        catalogue and ensure you apply while seats last!
+        <div>Your Classes</div>
+        <div className="ClassTable">
+          <div>Name</div>
+          <div>Professor</div>
+          <div>Seats</div>
+          <div>Checked</div>
+          <div>Date</div>
+          <div></div>
+        </div>
+        {classes.map((c) => (
+          <Row key={generateKey()} {...c} />
+        ))}
       </div>
-      <div className="ClassTable">
-        <div>Name</div>
-        <div>Professor</div>
-        <div>Seats</div>
-        <div>Checked</div>
-        <div>Date</div>
-        <div></div>
-      </div>
-      <Row />
-    </div>
-  );
+    );
+  } else {
+    return <div>Please register for some classes!</div>;
+  }
 }
