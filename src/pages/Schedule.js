@@ -12,7 +12,10 @@ export default function Schedule() {
     sendMessage({ type: "getClasses" }).then(() =>
       setClasses(getState().classes)
     );
-  useEffect(() => {}, []);
+
+  useEffect(() => {
+    console.log();
+  });
 
   return (
     <div>

@@ -10,7 +10,8 @@ export default function Menu(props) {
     if (user) {
       setLogin(getState().user.login || false);
     }
-  }, [user, login]);
+    console.log();
+  });
   return (
     <>
       <nav>
