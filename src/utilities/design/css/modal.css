@@ -1,0 +1,36 @@
+.Modal {
+  width: 25vw;
+  max-width: 200px;
+  padding: 0.25rem;
+  margin: auto;
+  margin-top: 5vh;
+  display: flex;
+
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+  background-color: rgb(50, 50, 50);
+  box-shadow: 0rem 0rem 0.25rem 0.25rem rgb(25, 25, 25);
+}
+.Modal div{
+  flex: auto;
+  text-align: left;
+  padding: 0.15rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-shrink: 1;
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.Modal div:first-child{
+  flex-shrink: 2;
+  flex-grow: 2;
+}
+
+.Modal div:last-child{
+  flex-shrink: 2;
+  flex-grow: 2;
+}
