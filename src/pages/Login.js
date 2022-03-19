@@ -27,6 +27,7 @@ export default function Login() {
     }
   };
 
+  const [user, setUser] = useState(getState().user);
   const [firstName, setFN] = useState("");
   const [lastName, setLN] = useState("");
   const [email, setEmail] = useState("");
@@ -54,12 +55,15 @@ export default function Login() {
 
   const registerUser = (event) => {
     if (passwordPass) {
-      sendMessage({ type: "createUser", user: createUserObj() });
+      sendMessage({ type: "createUser", user: createUserObj() }).then(() =>
+        setUser(createUserObj())
+      );
     } else {
       alert("Password failed to be replicated");
     }
-    setLoggedOn(true);
   };
+
+  useEffect(() => {}, [user]);
 
   const [showLogin, setShowLogin] = useState(true);
 
