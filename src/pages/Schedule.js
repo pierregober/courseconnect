@@ -24,13 +24,17 @@ export default function Schedule() {
         To celebrate our new year, we added in new classes. Be sure to check our
         catalogue and ensure you apply while seats last!
       </div>
-      <div className="ClassTable">
-        <div>Name</div>
-        <div>Professor</div>
-        <div>Content</div>
-        <div>Date</div>
-        <div></div>
-      </div>
+      {classes.length !== 0 ? (
+        <div className="ClassTable">
+          <div>Name</div>
+          <div>Professor</div>
+          <div>Content</div>
+          <div>Date</div>
+          <div></div>
+        </div>
+      ) : (
+        <></>
+      )}
       {classes.map((c) => (
         <Row key={generateKey()} {...c} />
       ))}
