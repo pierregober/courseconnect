@@ -7,6 +7,7 @@ export default function Login() {
   document.title = "Login";
 
   const [loggedOn, setLoggedOn] = useState(getState().user.login);
+  const [showLogin, setShowLogin] = useState(true);
 
   const validate = (props) => {
     switch (props.key) {
@@ -49,8 +50,9 @@ export default function Login() {
   };
 
   const loginUser = (event) => {
-    sendMessage({ type: "getUser", user: createUserObj() });
-    setLoggedOn(true);
+    sendMessage({ type: "getUser", user: createUserObj() }).then(() =>
+      setUser(createUserObj())
+    );
   };
 
   const registerUser = (event) => {
@@ -63,9 +65,9 @@ export default function Login() {
     }
   };
 
-  useEffect(() => {}, [user]);
-
-  const [showLogin, setShowLogin] = useState(true);
+  useEffect(() => {
+    if (getState().user) setLoggedOn(getState().user.login);
+  }, [user, loggedOn]);
 
   if (!loggedOn) {
     return (
