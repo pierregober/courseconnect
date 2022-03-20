@@ -39,6 +39,11 @@ export default function Login() {
     if (password !== "") setPasswordPass(password === event.target.value);
   };
 
+  useEffect(() => {
+    console.log("hit", getState().user.login, user);
+    if (getState().user.login) setLoggedOn(true);
+  }, [user]);
+
   const createUserObj = () => {
     return {
       firstName: firstName,
@@ -50,24 +55,22 @@ export default function Login() {
   };
 
   const loginUser = (event) => {
-    sendMessage({ type: "getUser", user: createUserObj() }).then(() =>
-      setUser(createUserObj())
-    );
+    sendMessage({ type: "getUser", user: createUserObj() }).then(() => {
+      setUser(createUserObj());
+      user.login = true;
+    });
   };
 
   const registerUser = (event) => {
     if (passwordPass) {
-      sendMessage({ type: "createUser", user: createUserObj() }).then(() =>
-        setUser(createUserObj())
-      );
+      sendMessage({ type: "createUser", user: createUserObj() }).then(() => {
+        setUser(createUserObj());
+        user.login = true;
+      });
     } else {
       alert("Password failed to be replicated");
     }
   };
-
-  useEffect(() => {
-    if (getState().user) setLoggedOn(getState().user.login);
-  }, [user, loggedOn]);
 
   if (!loggedOn) {
     return (
