@@ -40,7 +40,6 @@ export default function Login() {
   };
 
   useEffect(() => {
-    console.log("hit", getState().user.login, user);
     if (getState().user.login) setLoggedOn(true);
   }, [user]);
 
