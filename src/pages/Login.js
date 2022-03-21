@@ -56,7 +56,6 @@ export default function Login() {
   const loginUser = (event) => {
     sendMessage({ type: "getUser", user: createUserObj() }).then(() => {
       setUser(createUserObj());
-      user.login = true;
     });
   };
 
@@ -64,7 +63,6 @@ export default function Login() {
     if (passwordPass) {
       sendMessage({ type: "createUser", user: createUserObj() }).then(() => {
         setUser(createUserObj());
-        user.login = true;
       });
     } else {
       alert("Password failed to be replicated");
