@@ -30,7 +30,7 @@ const sendMessage = async (props) => {
       await createSeats(props.seats);
       break;
     case "getSeats":
-      await getSeats(props.seats);
+      await getSeats(props.class);
       break;
     case "updateSeats":
       await updateSeats(props.seats);
