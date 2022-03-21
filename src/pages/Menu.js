@@ -10,17 +10,16 @@ export default function Menu(props) {
     if (user) {
       setLogin(getState().user.login || false);
     }
-    console.log();
   });
   return (
     <>
       <nav>
         <div className="Menu">
           <Link to="/">Home</Link>
-          {!login ? <Link to="/login">Login</Link> : <></>}
-          {login ? <Link to="/class">Class</Link> : <></>}
-          {login ? <Link to="/schedule">Schedule</Link> : <></>}
-          {login ? <Link to="/profile">Profile</Link> : <></>}
+          <Link to="/login">Login</Link>
+          <Link to="/class">Class</Link>
+          <Link to="/schedule">Schedule</Link>
+          <Link to="/profile">Profile</Link>
         </div>
       </nav>
       <div className="Logo"></div>
