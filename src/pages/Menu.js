@@ -3,14 +3,6 @@ import { getState, updateState } from "../utilities/scripts/state";
 import { useEffect, useState } from "react";
 
 export default function Menu(props) {
-  const [login, setLogin] = useState(false);
-  const [user, setUser] = useState(getState().user);
-
-  useEffect(() => {
-    if (user) {
-      setLogin(getState().user.login || false);
-    }
-  });
   return (
     <>
       <nav>
