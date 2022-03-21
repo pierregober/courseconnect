@@ -2,40 +2,42 @@ import { createUser, getUser, updateUser } from "./user";
 import { getClass, getClasses, createClass, updateClass } from "./class";
 import { getSeats, createSeats, updateSeats } from "./seats";
 
-export default async function sendMessage(props) {
+const sendMessage = async (props) => {
   if (!props) throw new Error("Send Message Props' empty");
   switch (props.type) {
     case "createUser":
-      createUser(props.user);
+      await createUser(props.user);
       break;
     case "getUser":
-      getUser(props.user);
+      await getUser(props.user);
       break;
     case "updateUser":
-      updateUser(props.user);
+      await updateUser(props.user);
       break;
     case "createClass":
-      createClass(props.class);
+      await createClass(props.class);
       break;
     case "getClass":
-      getClass(props.class);
+      await getClass(props.class);
       break;
     case "getClasses":
-      getClasses();
+      await getClasses();
       break;
     case "updateClass":
-      updateClass(props.class);
+      await updateClass(props.class);
       break;
     case "createSeats":
-      createSeats(props.seats);
+      await createSeats(props.seats);
       break;
     case "getSeats":
-      getSeats(props.seats);
+      await getSeats(props.seats);
       break;
     case "updateSeats":
-      updateSeats(props.seats);
+      await updateSeats(props.seats);
       break;
     default:
       throw new Error("Send Message Props' lacks a type");
   }
-}
+};
+
+export default sendMessage;

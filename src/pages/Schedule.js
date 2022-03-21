@@ -9,13 +9,11 @@ export default function Schedule() {
   const [classes, setClasses] = useState(getState().classes);
 
   if (classes.length === 0)
-    sendMessage({ type: "getClasses" }).then(() =>
-      setClasses(getState().classes)
-    );
+    sendMessage({ type: "getClasses" }).then(() => {
+      setClasses(getState().classes);
+    });
 
-  useEffect(() => {
-    console.log();
-  });
+  useEffect(() => {}, [classes]);
 
   return (
     <div>

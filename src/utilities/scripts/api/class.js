@@ -25,24 +25,24 @@ const getClass = (props) => {
   })
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-      return data;
+      updateState({ key: "class", class: data });
     })
     .catch((error) => console.log(error));
 };
 
-const getClasses = (props) => {
-  fetch(urlbase + "classes", {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  })
-    .then((response) => response.json())
-    .then((data) => {
-      updateState({ key: "classes", classes: data });
-    })
-    .catch((error) => console.log(error));
+const getClasses = async (props) => {
+  try {
+    const response = await fetch(urlbase + "classes", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    updateState({ key: "classes", classes: data });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 const updateClass = (props) => {
