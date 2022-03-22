@@ -13,7 +13,7 @@
   background-color: rgb(50, 50, 50);
   box-shadow: 0rem 0rem 0.25rem 0.25rem rgb(25, 25, 25);
 }
-.Modal div{
+.Modal div {
   flex: auto;
   text-align: left;
   padding: 0.15rem;
@@ -25,12 +25,12 @@
   justify-content: space-around;
 }
 
-.Modal div:first-child{
+.Modal div:first-child {
   flex-shrink: 2;
   flex-grow: 2;
 }
 
-.Modal div:last-child{
+.Modal div:last-child {
   flex-shrink: 2;
   flex-grow: 2;
 }

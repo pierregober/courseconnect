@@ -5,8 +5,8 @@ var state = {
     lastName: "",
     email: "",
     login: false,
+    schedule: [],
   },
-  schedule: [],
   seats: {},
   classes: [],
   class: {},
@@ -25,9 +25,7 @@ function updateState(props) {
       if (props.user.email) state.user.email = props.user.email;
       if (props.user.login) state.user.login = props.user.login;
       if (props.user.password) state.user.password = props.user.password;
-      break;
-    case "schedule":
-      state.schedule = props.schedule;
+      if (props.user.schedule) state.user.schedule = props.user.schedule;
       break;
     case "seats":
       state.seats = props.seats;
