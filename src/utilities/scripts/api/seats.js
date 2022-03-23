@@ -2,7 +2,6 @@ import { urlbase } from "../utilities";
 import { getState, updateState } from "../state";
 
 const createSeats = async (props) => {
-  console.log(props);
   try {
     const response = await fetch(urlbase + "seats", {
       method: "POST",
@@ -43,7 +42,7 @@ const getSeats = async (props) => {
 const updateSeats = async (props) => {
   try {
     const response = await fetch(urlbase + "seats", {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },

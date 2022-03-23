@@ -48,14 +48,13 @@ const getClasses = async (props) => {
 const updateClass = async (props) => {
   try {
     const response = await fetch(urlbase + "classes", {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(props),
     });
     const data = await response.json();
-    console.log(data);
   } catch (error) {
     console.log(error);
   }

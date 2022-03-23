@@ -18,7 +18,6 @@ export default function Row(props) {
     let seat = getState().seats;
     let user = getState().user;
     seat.seatsTaken++;
-    console.log(user);
     user.schedule.push(seat.classId);
     getState().seats = seat;
     getState().user = user;
@@ -56,7 +55,7 @@ export default function Row(props) {
               </div>
             </div>
             <div>
-              <button onClick={() => update()}>Register</button>
+              <button onClick={() => setOpen(false)}>Register</button>
               <button onClick={() => setOpen(false)}>Close</button>
             </div>
           </ReactModal>
@@ -67,3 +66,4 @@ export default function Row(props) {
   }
   return <></>;
 }
+// <button onClick={() => update()}>Register</button>

@@ -49,7 +49,7 @@ const getUser = async (props) => {
 const updateUser = async (props) => {
   try {
     const response = await fetch(urlbase + "users", {
-      method: "PATCH",
+      method: "PUT",
       headers: {
         "Content-Type": "application/json",
       },
